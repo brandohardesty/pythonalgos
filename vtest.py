@@ -1,3 +1,4 @@
+import Matrix
 class Graph:
     adjMat = list(list())
     def __init__(self,verticies,edges):
@@ -38,5 +39,8 @@ e = [(0,1),(0,2)]
 g = Graph(v,e)
 g.testMat()
 g.genAdjMatrix()
-print(g.adjMat)
+A = Matrix.Matrix([[1,2],[3,4]])
+B = Matrix.Matrix([[2,2],[4,4]])
+C = A + B
+print(C)
 print("test")
