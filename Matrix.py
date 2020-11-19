@@ -29,5 +29,28 @@ class Matrix:
                 for j in range(0,self.cols):
                     resList[i][j] = self.entries[i][j] + other.getEntry(i,j)
         return Matrix(resList)
+    def __sub__(self,other):
+        resList = list(list())
 
+        if(other.rows == self.rows and other.cols == self.cols):
+            for i in range(0, self.rows):
+                resList.append([0 for j in range(0, self.cols)])
+
+            for i in range(0,self.rows):
+                for j in range(0,self.cols):
+                    resList[i][j] = self.entries[i][j] - other.getEntry(i,j)
+        return Matrix(resList)
+
+    def __mul__(self,other):
+        if(other.rows == self.cols):
+            resList = list(list())
+            for i in range(0, self.rows):
+                resList.append([0 for j in range(0, other.cols)])
+            for i in range(0,self.rows):
+                for j in range(0,other.cols):
+                    for k in range(0,self.cols):
+                        resList[i][j] = resList[i][j] + self.getEntry(i,k)*other.getEntry(k,j)
+            return Matrix(resList)
+        else:
+            print("Matricies are of invalid dimensions")
 

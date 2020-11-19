@@ -41,6 +41,6 @@ g.testMat()
 g.genAdjMatrix()
 A = Matrix.Matrix([[1,2],[3,4]])
 B = Matrix.Matrix([[2,2],[4,4]])
-C = A + B
+C = A * B
 print(C)
 print("test")
