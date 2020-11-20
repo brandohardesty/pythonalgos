@@ -8,11 +8,15 @@ class Matrix:
         self.rows = len(self.entries)
         self.cols = len(self.entries[0])
 
-
     def setEntry(self,i,j,value):
         self.entries[i][j] = value
+
     def getEntry(self,i,j):
         return self.entries[i][j]
+
+    def calcTrace(self):
+        return sum([(self.entries[i][j]) for i in range(self.rows) for j in range(self.cols) if i == j])
+
     def __str__(self):
         res = str()
         for i in range(0,self.rows):
@@ -53,4 +57,6 @@ class Matrix:
             return Matrix(resList)
         else:
             print("Matricies are of invalid dimensions")
+
+
 
